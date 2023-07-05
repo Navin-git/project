@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors */
+  --primary: #7c5dfa;
+  --primary-light: #9277ff;
+  --secondary-dark: #888eb0;
+  --secondary: #dfe3fa;
+  --secondary-light: #f8f8fb;
+  --dark-dark: #0c0e16;
+  --dark: #1e2139;
+  --dark-light: #252945;
+  --error: #ec5757;
+  --error-light: #9277ff;
+}
+.invoices-page-wrapper {
+  max-width: 1000px;
+}
+@layer base {
+  /* Customizing forms */
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply bg-dark-dark py-2 px-3 text-secondary-light rounded-lg focus:outline-0;
+  }
+  [type="checkbox"] {
+    @apply focus:ring-dark-dark;
+  }
+  [type="radio"] {
+    @apply focus:ring-dark-dark;
+  }
+  label {
+    @apply block font-semibold text-sm leading-6 text-secondary-light mb-1.5;
+  }
+  .error {
+    @apply text-sm p-0.5 text-error hidden;
+  }
+  input:invalid[focused="true"],
+  select:invalid[focused="true"] {
+    @apply border border-error;
+  }
+  input:invalid[focused="true"] ~ .error,
+  select:invalid[focused="true"] ~ .error {
+    @apply block;
+  }
+
+  .display-h1 {
+    @apply text-secondary-light text-3xl font-bold;
+  }
+  .display-h3 {
+    @apply text-secondary-light text-2xl font-bold;
+  }
+  .display-h4 {
+    @apply text-secondary-light text-xl font-semibold;
+  }
+  .display-body {
+    @apply text-secondary-light text-base font-normal;
+  }
+}
